@@ -9,17 +9,17 @@ import java.util.ArrayList;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Juegos {
-    ArrayList<Juego> coleccion;
+    ArrayList<Juego> juego;
 
     public Juegos(){
-        coleccion = new ArrayList<>();
+        juego = new ArrayList<>();
     }
 
     public void addJuego(Juego j){
-        coleccion.add(j);
+        juego.add(j);
     }
     public void muestraJuegos(){
-        for(Juego j : coleccion){
+        for(Juego j : juego){
             System.out.println(j);
         }
     }

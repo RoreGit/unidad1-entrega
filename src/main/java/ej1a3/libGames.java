@@ -222,7 +222,7 @@ public class libGames {
         id = scan.nextInt();
         scan.nextLine();
         queryJuego(id);
-        if (lookForDupes(id)) {
+        if (!lookForDupes(id)) {
             System.out.println("SE HAN ENCONTRADO DUPLICADOS, INTRODUCE EL NOMBRE DEL JUEGO A BORRAR");
             String nombreDupe = scan.nextLine();
             raf.seek((long) (id - 1) * sizeGame);
@@ -252,6 +252,7 @@ public class libGames {
         raf.writeUTF("x");
         raf.writeInt(0);
     }
+
 
     public static void eraseGame(String name) {
         int id, year;

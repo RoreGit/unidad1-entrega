@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebe5fe1f-75c4-450f-805c-2591b2934abf" name="Changes" comment="a">
+    <list default="true" id="ebe5fe1f-75c4-450f-805c-2591b2934abf" name="Changes" comment="Final Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ej1a3/libGames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ej1a3/libGames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ej4/Juegos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ej4/Juegos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,8 @@
       <workItem from="1666890062272" duration="1588000" />
       <workItem from="1666937144182" duration="139000" />
       <workItem from="1667409160760" duration="228000" />
-      <workItem from="1668442961698" duration="6360000" />
+      <workItem from="1668442961698" duration="7599000" />
+      <workItem from="1668535482348" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="a">
       <created>1666937177061</created>
@@ -68,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666937177061</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Final Commit">
+      <created>1668450978168</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668450978168</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,6 +93,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="a" />
-    <option name="LAST_COMMIT_MESSAGE" value="a" />
+    <MESSAGE value="Final Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Commit" />
   </component>
 </project>

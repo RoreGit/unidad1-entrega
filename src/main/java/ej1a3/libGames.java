@@ -29,6 +29,7 @@ public class libGames {
     public static FileChannel fileChannel;
     public static FileChannel fileCopy;
 
+    //Compruebo si la posición a escribir está ocupada o no.
     public static boolean lookForDupes(int id) throws IOException {
         int idDupe;
         raf.seek((long) (id - 1) * sizeGame);
@@ -50,14 +51,14 @@ public class libGames {
         return String.format("%-36s", s);
     }
     */
-
+    //Normalizo el string a máximo 36 caracteres
     public static String normalizeNom(String nombre) {
         if (nombre.length() < 36)
             return nombre;
         else
             return nombre.substring(0, 36);
     }
-
+    //Pregunto el id del juego a introducir
     public static void askAddJuego() throws IOException {
         int id;
         System.out.println("Introduce el ID del Juego");
@@ -65,7 +66,7 @@ public class libGames {
         scan.nextLine();
         addJuego(id);
     }
-
+    //Método comodín para mostrar la tarea en ejecución
     public static void doThings(char c) {
         if (c == 's')
             System.out.print("GUARDANDO");
@@ -99,7 +100,7 @@ public class libGames {
         }
 
     }
-
+    //Añado el juego por id, si la posición no está ocupada, en el RAF, si no, en el área de sinónimos.
     public static void addJuego(int id) throws IOException {
         int year;
         String title, studio;
@@ -130,7 +131,7 @@ public class libGames {
             doThings('s');
         }
     }
-
+    //Muestro el área de sinónimos
     public static void showDupes() throws IOException {
         int id, year;
         String title, studio;
@@ -145,14 +146,14 @@ public class libGames {
         }
         dis.close();
     }
-
+    //Pregunto la ID del juego a buscar
     public static void askQueryJuego() {
         int id;
         System.out.println("INTRODUCE EL ID DEL JUEGO A BUSCAR");
         id = scan.nextInt();
         queryJuego(id);
     }
-
+    //Realizo la búsqueda y muestra de los juegos. Si hay duplicados también los muestra.
     public static void queryJuego(int id) {
         int year;
         String studio, title;
@@ -196,7 +197,7 @@ public class libGames {
             System.out.println("Juego no encontrado");
         }
     }
-
+    //Confirmación para borrar
     public static boolean confirmErase() {
         char choice;
         System.out.println("¿QUIERES BORRARLO? S/N");
@@ -214,7 +215,7 @@ public class libGames {
                 System.out.println("Introduce S o N");
         }
     }
-
+    //Pido id para borrar y borro el juego con ID introducida
     public static void askEraseGame() throws IOException {
         int id;
         String title;
@@ -244,7 +245,7 @@ public class libGames {
             }
         }
     }
-
+    //Borro el juego con la ID introducida
     public static void eraseGame(int id) throws IOException {
         raf.seek((long) (id - 1) * sizeGame);
         raf.writeInt(0);
@@ -253,7 +254,7 @@ public class libGames {
         raf.writeInt(0);
     }
 
-
+    //Borro el juego con el nombre introducido
     public static void eraseGame(String name) {
         int id, year;
         String nombre, studio;
@@ -275,7 +276,7 @@ public class libGames {
             throw new RuntimeException(e);
         }
     }
-
+    //Creo un XML con el contenido del RAF
     public static void createXML() throws ParserConfigurationException, TransformerException {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
@@ -321,7 +322,7 @@ public class libGames {
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.transform(source,resultado);
     }
-
+    //Leo el xml generado
     public static void readXML(){
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -346,6 +347,7 @@ public class libGames {
 
 
     }
+    //Hago una copia del RAF
     public static void copyRaf() throws IOException {
         File prueba = new File("games_copy.dat");
         if (prueba.exists())
@@ -358,7 +360,7 @@ public class libGames {
         }
         doThings('q');
     }
-
+    //Borro el raf y área de sinónimos
     public static boolean deleteAll(){
         char choice;
         System.out.println("¿SEGURO QUE QUIERES BORRAR LA BASE DE DATOS? S/N");
@@ -389,7 +391,7 @@ public class libGames {
                 System.out.println("Introduce S o N");
         }
     }
-
+    //Contiene el menú de cosas que se pueden realizar, además aquí se crean el RAF, Files, DataOutputStream...
     public static void main(String[] args) throws IOException, ParserConfigurationException, TransformerException {
         games = new File("games.dat");
         duplicados = new File("dupes.dat");
